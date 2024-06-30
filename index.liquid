@@ -1,4 +1,21 @@
+<!-- Custom Section File -->
 
+<!-- HTML Structure -->
+<section id="custom-section">
+  <div class="main-image">
+    <img src="{{ section.settings.main_image | img_url: 'master' }}" alt="Main Image">
+    <div class="badge {{ section.settings.badge_position }}">
+      <img src="{{ section.settings.badge_image | img_url: 'master' }}" alt="Badge Image">
+    </div>
+  </div>
+
+  <div class="text-content">
+    <h2>{{ section.settings.doctor_name }}</h2>
+    <h3>{{ section.settings.headline }}</h3>
+    <p>{{ section.settings.body_text }}</p>
+    <a href="{{ section.settings.button_url }}" class="btn">{{ section.settings.button_text }}</a>
+  </div>
+</section>
 
 <!-- Shopify Liquid Schema -->
 {% schema %}
