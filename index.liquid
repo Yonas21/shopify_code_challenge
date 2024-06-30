@@ -2,6 +2,67 @@
 
 <!-- HTML Structure -->
 <section id="custom-section">
+  <style>
+    /* CSS Styles */
+    #custom-section {
+      text-align: center;
+      padding: 20px;
+    }
+    #custom-section.main-image {
+      position: relative;
+    }
+    #custom-section.main-image img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
+    #custom-section.badge {
+      position: absolute;
+    }
+    #custom-section.badge.top-left {
+      top: 10px;
+      left: 10px;
+    }
+    #custom-section.badge.top-right {
+      top: 10px;
+      right: 10px;
+    }
+    #custom-section.badge.bottom-left {
+      bottom: 10px;
+      left: 10px;
+    }
+    #custom-section.badge.bottom-right {
+      bottom: 10px;
+      right: 10px;
+    }
+    #custom-section.text-content {
+      margin-top: 20px;
+    }
+    #custom-section.btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    */ Consider Small Devices and Make it A bit Responsive */
+    @media (min-width: 768px) {
+      #custom-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      #custom-section.main-image,
+      #custom-section.text-content {
+        max-width: 500px;
+      }
+    }
+  </style>
+
   <div class="main-image">
     <img src="{{ section.settings.main_image | img_url: 'master' }}" alt="Main Image">
     <div class="badge {{ section.settings.badge_position }}">
